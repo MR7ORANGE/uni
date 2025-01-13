@@ -185,6 +185,59 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
+        /* Mobile Styles */
+        @media only screen and (max-width: 768px) {
+            .welcome-text {
+                font-size: 32px;
+                text-align: center;
+            }
+            
+            .header {
+                height: auto;
+                text-align: center;
+            }
+            
+            .credit-btn, .suggestion-btn {
+                position: static;
+                display: block;
+                width: 90%;
+                margin: 10px auto;
+            }
+            
+            .credit-content, .suggestion-box {
+                position: fixed;
+                right: 5%;
+                left: 5%;
+                width: 90%;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 1000;
+            }
+            
+            .options {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .option-btn {
+                width: 90%;
+            }
+            
+            .content-area {
+                margin: 5px;
+                padding: 10px;
+            }
+            
+            .file-container {
+                padding: 15px;
+            }
+            
+            .course-btn, .class-btn {
+                font-size: 16px;
+                padding: 12px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -232,6 +285,18 @@
     </div>
 
     <script>
+        // Check if user is on mobile
+        function isMobile() {
+            return window.innerWidth <= 768;
+        }
+
+        // Add a note about which version is being displayed
+        window.onload = function() {
+            console.log(`Currently displaying ${isMobile() ? 'mobile' : 'desktop'} version`);
+            // The page will automatically use mobile styles when on a mobile device
+            // due to the CSS media queries, no additional JavaScript needed
+        };
+
         document.querySelector('.start-btn').addEventListener('click', () => {
             document.querySelector('.welcome-screen').style.display = 'none';
             document.querySelector('.header').style.display = 'block';
