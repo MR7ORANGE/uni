@@ -10,6 +10,7 @@
             padding: 0;
             font-family: Arial, sans-serif;
             overflow-x: hidden;
+            background-color: #E9EFD8;
         }
         .welcome-screen {
             height: 100vh;
@@ -188,28 +189,49 @@
 
         /* Mobile Styles */
         @media only screen and (max-width: 768px) {
+            body {
+                background-color: #E9EFD8;
+                min-height: 100vh;
+            }
+            
             .welcome-text {
-                font-size: 32px;
+                font-size: 24px;
                 text-align: center;
+            }
+            
+            .start-btn {
+                font-size: 16px;
+                padding: 12px 24px;
             }
             
             .header {
                 height: auto;
                 text-align: center;
+                padding: 15px;
+                width: 100vw;
+                box-sizing: border-box;
+                margin: 0;
+            }
+            
+            .header h2 {
+                font-size: 20px;
+                margin: 5px 0;
             }
             
             .credit-btn, .suggestion-btn {
                 position: static;
                 display: block;
-                width: 90%;
-                margin: 10px auto;
+                width: 100%;
+                margin: 8px auto;
+                padding: 8px 16px;
+                font-size: 14px;
             }
             
             .credit-content, .suggestion-box {
                 position: fixed;
-                right: 5%;
-                left: 5%;
-                width: 90%;
+                right: 2%;
+                left: 2%;
+                width: 96%;
                 top: 50%;
                 transform: translateY(-50%);
                 z-index: 1000;
@@ -218,24 +240,40 @@
             .options {
                 flex-direction: column;
                 align-items: center;
+                padding: 10px;
+                width: 100%;
+                box-sizing: border-box;
             }
             
             .option-btn {
-                width: 90%;
+                width: 100%;
+                font-size: 14px;
+                padding: 8px 16px;
+                margin: 5px 0;
             }
             
             .content-area {
-                margin: 5px;
+                margin: 0;
                 padding: 10px;
+                width: 100vw;
+                box-sizing: border-box;
+                min-height: 90vh;
             }
             
             .file-container {
-                padding: 15px;
+                padding: 12px;
+                font-size: 14px;
             }
             
             .course-btn, .class-btn {
-                font-size: 16px;
-                padding: 12px;
+                font-size: 14px;
+                padding: 10px;
+                margin: 5px 0;
+            }
+            
+            .file-icon {
+                width: 20px;
+                height: 20px;
             }
         }
     </style>
@@ -369,14 +407,14 @@
                 'Course 1': {
                     'Network Class': {
                         'Lecture 1': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/ISM/course%201/Network%20class/Lecture%20One.pptx',
-                        'Lecture 2': 'https://github.com/MR7ORANGE/uni/blob/main/ISM/course%201/Network%20class/lecture%20tow.pptx',
-                        'Lecture 3': 'https://github.com/MR7ORANGE/uni/blob/main/ISM/course%201/Network%20class/Lecture%20Three.pptx',
-                        'Lecture 4': 'https://github.com/MR7ORANGE/uni/blob/main/ISM/course%201/Network%20class/Lecture%20Four.pptx',
-                        'Lecture 5': 'https://github.com/MR7ORANGE/uni/blob/main/ISM/course%201/Network%20class/lecture%20five.pptx',
-                        'Lecture 6': 'https://github.com/MR7ORANGE/uni/blob/main/ISM/course%201/Network%20class/Lecture%20Six.pptx',
-                        'Lecture 7': 'https://github.com/MR7ORANGE/uni/blob/main/ISM/course%201/Network%20class/Lecture%20Seven.pptx',
-                        'Lecture 8': 'https://github.com/MR7ORANGE/uni/blob/main/ISM/course%201/Network%20class/Lecture%20Eight.pptx',
-                        'Lecture 9': 'https://github.com/MR7ORANGE/uni/blob/main/ISM/course%201/Network%20class/Lecture%20Nine.pptx'
+                        'Lecture 2': 'https://github.com/MR7ORANGE/uni/raw/refs/heads/main/ISM/course%201/Network%20class/lecture%20tow.pptx',
+                        'Lecture 3': 'https://github.com/MR7ORANGE/uni/raw/refs/heads/main/ISM/course%201/Network%20class/Lecture%20Three.pptx',
+                        'Lecture 4': 'https://github.com/MR7ORANGE/uni/raw/refs/heads/main/ISM/course%201/Network%20class/Lecture%20Four.pptx',
+                        'Lecture 5': 'https://github.com/MR7ORANGE/uni/raw/refs/heads/main/ISM/course%201/Network%20class/lecture%20five.pptx',
+                        'Lecture 6': 'https://github.com/MR7ORANGE/uni/raw/refs/heads/main/ISM/course%201/Network%20class/Lecture%20Six.pptx',
+                        'Lecture 7': 'https://github.com/MR7ORANGE/uni/raw/refs/heads/main/ISM/course%201/Network%20class/Lecture%20Seven.pptx',
+                        'Lecture 8': 'https://github.com/MR7ORANGE/uni/raw/refs/heads/main/ISM/course%201/Network%20class/Lecture%20Eight.pptx',
+                        'Lecture 9': 'https://github.com/MR7ORANGE/uni/raw/refs/heads/main/ISM/course%201/Network%20class/Lecture%20Nine.pptx'
                     }
                 }
             },
