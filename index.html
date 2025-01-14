@@ -25,6 +25,12 @@
             font-size: 48px;
             animation: fadeIn 2s ease-in;
         }
+        .welcome-logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in;
+        }
         .start-btn {
             padding: 15px 30px;
             font-size: 20px;
@@ -50,6 +56,15 @@
             border-radius: 0 0 15px 15px;
             position: relative;
             transition: all 0.3s ease;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .header-logo {
+            width: 40px;
+            height: auto;
         }
         .specialization-link {
             color: #D59D73;
@@ -288,12 +303,16 @@
 </head>
 <body>
     <div class="welcome-screen">
+        <img src="https://raw.githubusercontent.com/MR7ORANGE/uni/main/logo.PNG" alt="CBI HUB Logo" class="welcome-logo">
         <h1 class="welcome-text">Welcome</h1>
         <button class="start-btn">Let's study</button>
     </div>
 
     <div class="header">
-        <h2>C.B.I HUB</h2>
+        <div class="header-content">
+            <img src="https://raw.githubusercontent.com/MR7ORANGE/uni/main/logo.PNG" alt="CBI HUB Logo" class="header-logo">
+            <h2>C.B.I HUB</h2>
+        </div>
         <button class="credit-btn" onclick="toggleCredits()">CREDIT</button>
         <div class="credit-content" id="creditContent">
             <div class="credit-section">
