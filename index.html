@@ -53,7 +53,7 @@
         .specialization-link:hover {
             text-decoration: underline;
         }
-        .credit-btn, .suggestion-btn {
+        .credit-btn {
             position: absolute;
             background-color: #D59D73;
             color: white;
@@ -61,31 +61,18 @@
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
-        }
-        .credit-btn {
             right: 140px;
             top: 45px;
         }
-        .suggestion-btn {
-            right: 240px;
-            top: 45px;
-        }
-        .credit-content, .suggestion-box {
+        .credit-content {
             display: none;
             position: absolute;
             background-color: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .credit-content {
             right: 120px;
             top: 70px;
-        }
-        .suggestion-box {
-            right: 220px;
-            top: 70px;
-            width: 300px;
         }
         .credit-section {
             margin-bottom: 15px;
@@ -97,39 +84,6 @@
         .credit-section p {
             color: #333;
             margin: 5px 0;
-        }
-        .suggestion-form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .suggestion-input {
-            width: 100%;
-            height: 100px;
-            padding: 10px;
-            border: 1px solid #D59D73;
-            border-radius: 5px;
-            resize: none;
-            font-family: inherit;
-        }
-        .suggestion-submit {
-            background-color: #D59D73;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            align-self: flex-end;
-        }
-        .suggestion-submit:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-        }
-        .submit-status {
-            color: #2B2D42;
-            text-align: center;
-            margin-top: 10px;
-            display: none;
         }
         .options {
             display: none;
@@ -218,7 +172,7 @@
                 margin: 5px 0;
             }
             
-            .credit-btn, .suggestion-btn {
+            .credit-btn {
                 position: static;
                 display: block;
                 width: 100%;
@@ -227,7 +181,7 @@
                 font-size: 14px;
             }
             
-            .credit-content, .suggestion-box {
+            .credit-content {
                 position: fixed;
                 right: 2%;
                 left: 2%;
@@ -286,15 +240,7 @@
 
     <div class="header">
         <h2>University Name</h2>
-        <button class="suggestion-btn" onclick="toggleSuggestionBox()">SUGGESTION</button>
         <button class="credit-btn" onclick="toggleCredits()">CREDIT</button>
-        <div class="suggestion-box" id="suggestionBox">
-            <form class="suggestion-form" id="suggestionForm" onsubmit="submitSuggestion(event)">
-                <textarea class="suggestion-input" name="suggestion" placeholder="Write your suggestion here..." required></textarea>
-                <button type="submit" class="suggestion-submit">Submit</button>
-                <div class="submit-status" id="submitStatus"></div>
-            </form>
-        </div>
         <div class="credit-content" id="creditContent">
             <div class="credit-section">
                 <h3>FRONT END</h3>
@@ -342,60 +288,6 @@
         function toggleCredits() {
             const creditContent = document.getElementById('creditContent');
             creditContent.style.display = creditContent.style.display === 'none' ? 'block' : 'none';
-            document.getElementById('suggestionBox').style.display = 'none';
-        }
-
-        function toggleSuggestionBox() {
-            const suggestionBox = document.getElementById('suggestionBox');
-            suggestionBox.style.display = suggestionBox.style.display === 'none' ? 'block' : 'none';
-            document.getElementById('creditContent').style.display = 'none';
-        }
-
-        async function submitSuggestion(event) {
-            event.preventDefault();
-            
-            const form = event.target;
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const statusDiv = document.getElementById('submitStatus');
-            const suggestionText = form.suggestion.value.trim();
-            
-            if (!suggestionText) {
-                statusDiv.textContent = 'Please write a suggestion before submitting.';
-                statusDiv.style.display = 'block';
-                return;
-            }
-
-            submitBtn.disabled = true;
-            statusDiv.textContent = 'Sending suggestion...';
-            statusDiv.style.display = 'block';
-
-            try {
-                const response = await fetch('/api/suggestions', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        suggestion: suggestionText,
-                        timestamp: new Date().toISOString()
-                    })
-                });
-
-                if (response.ok) {
-                    statusDiv.textContent = 'Thank you for your suggestion!';
-                    form.reset();
-                    setTimeout(() => {
-                        document.getElementById('suggestionBox').style.display = 'none';
-                        statusDiv.style.display = 'none';
-                    }, 2000);
-                } else {
-                    throw new Error('Failed to submit suggestion');
-                }
-            } catch (error) {
-                statusDiv.textContent = 'Failed to send suggestion. Please try again.';
-            } finally {
-                submitBtn.disabled = false;
-            }
         }
 
         const fileStructure = {
@@ -419,11 +311,24 @@
                         'Lecture 4': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec4.pdf',
                         'Lecture 5': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec5.pdf',
                         'Lecture 6': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec6.pdf',
-                        'Lecture 6': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec7.pdf',
-                        'Lecture 7': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec8.pdf',
-                        'Lecture 8': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec9.pdf',
+                        'Lecture 7': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec7.pdf',
+                        'Lecture 8': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec8.pdf',
+                        'Lecture 9': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec9.pdf',
                         'Lecture 10': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec10.pdf',
                         'Lecture 11': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec11.pdf',
+                    },
+                    'WEB programing': {
+                        'Lecture 1': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%201.pdf',
+                        'Lecture 2': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%202.pdf',
+                        'Lecture 3': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%203.pdf',
+                        'Lecture 4': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%204.pdf',
+                        'Lecture 5': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%205.pdf',
+                        'Lecture 6': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%206.pdf',
+                        'Lecture 7': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%207.pdf',
+                        'Lecture 8': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%208.pdf',
+                        'Lecture 9': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%209.pdf',
+                        'Lecture 10': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%2010.pdf',
+                        'Lecture 11': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%2011.pdf',
                     },
 
                     
