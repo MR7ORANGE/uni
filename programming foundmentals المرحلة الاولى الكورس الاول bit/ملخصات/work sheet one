@@ -1,0 +1,16 @@
+num = int(input("N="))
+
+prime = 1
+
+if num < 2:
+    prime = 0
+else:
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            prime = 0
+            break
+
+if prime == 1:
+    print(num, "it is prime number (: ")
+else:
+    print(num, "it is not prime number")
