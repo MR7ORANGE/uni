@@ -210,6 +210,27 @@
             100% { transform: scale(1); }
         }
 
+        /* Search bar styles */
+        .search-container {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: 2px solid #2B2D42;
+            border-radius: 25px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .search-input:focus {
+            box-shadow: 0 0 10px rgba(43, 45, 66, 0.3);
+        }
+
         /* Mobile Styles */
         @media only screen and (max-width: 768px) {
             body {
@@ -302,6 +323,12 @@
                 width: 22px;
                 height: 22px;
             }
+
+            .search-container {
+                width: 90%;
+                margin: 20px 0;
+                text-align: left;
+            }
         }
     </style>
 </head>
@@ -338,6 +365,9 @@
     </div>
 
     <div class="content-area">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search files..." onkeyup="searchFiles(this.value)">
+        </div>
         <div id="fileSystem"></div>
     </div>
 
@@ -375,69 +405,69 @@
             'ISM': {
                 'stage 2': {
                     'Network Class': {
-                        'Lecture 1': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/ISM/course%201/Network%20class/Lecture%20One.pptx',
-                        'Lecture 2': 'https://github.com/MR7ORANGE/uni/raw/refs/heads/main/ISM/course%201/Network%20class/lecture%20tow.pptx',
-                        'Lecture 3': 'https://github.com/MR7ORANGE/uni/raw/refs/heads/main/ISM/course%201/Network%20class/Lecture%20Three.pptx',
-                        'Lecture 4': 'https://github.com/MR7ORANGE/uni/raw/refs/heads/main/ISM/course%201/Network%20class/Lecture%20Four.pptx',
-                        'Lecture 5': 'https://github.com/MR7ORANGE/uni/raw/refs/heads/main/ISM/course%201/Network%20class/lecture%20five.pptx',
-                        'Lecture 6': 'https://github.com/MR7ORANGE/uni/raw/refs/heads/main/ISM/course%201/Network%20class/Lecture%20Six.pptx',
-                        'Lecture 7': 'https://github.com/MR7ORANGE/uni/raw/refs/heads/main/ISM/course%201/Network%20class/Lecture%20Seven.pptx',
-                        'Lecture 8': 'https://github.com/MR7ORANGE/uni/raw/refs/heads/main/ISM/course%201/Network%20class/Lecture%20Eight.pptx',
-                        'Lecture 9': 'https://github.com/MR7ORANGE/uni/raw/refs/heads/main/ISM/course%201/Network%20class/Lecture%20Nine.pptx',
+                        'Lecture 1 Network Class': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/ISM/course%201/Network%20class/Lecture%20One.pptx',
+                        'Lecture 2 Network Class': 'https://github.com/MR7ORANGE/uni/raw/refs/heads/main/ISM/course%201/Network%20class/lecture%20tow.pptx',
+                        'Lecture 3 Network Class': 'https://github.com/MR7ORANGE/uni/raw/refs/heads/main/ISM/course%201/Network%20class/Lecture%20Three.pptx',
+                        'Lecture 4 Network Class': 'https://github.com/MR7ORANGE/uni/raw/refs/heads/main/ISM/course%201/Network%20class/Lecture%20Four.pptx',
+                        'Lecture 5 Network Class': 'https://github.com/MR7ORANGE/uni/raw/refs/heads/main/ISM/course%201/Network%20class/lecture%20five.pptx',
+                        'Lecture 6 Network Class': 'https://github.com/MR7ORANGE/uni/raw/refs/heads/main/ISM/course%201/Network%20class/Lecture%20Six.pptx',
+                        'Lecture 7 Network Class': 'https://github.com/MR7ORANGE/uni/raw/refs/heads/main/ISM/course%201/Network%20class/Lecture%20Seven.pptx',
+                        'Lecture 8 Network Class': 'https://github.com/MR7ORANGE/uni/raw/refs/heads/main/ISM/course%201/Network%20class/Lecture%20Eight.pptx',
+                        'Lecture 9 Network Class': 'https://github.com/MR7ORANGE/uni/raw/refs/heads/main/ISM/course%201/Network%20class/Lecture%20Nine.pptx',
                     },
                     'Baath crimes': {
-                        'Lecture 1': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec1.pdf',
-                        'Lecture 2': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec2.pdf',
-                        'Lecture 3': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec3.pdf',
-                        'Lecture 4': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec4.pdf',
-                        'Lecture 5': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec5.pdf',
-                        'Lecture 6': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec6.pdf',
-                        'Lecture 7': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec7.pdf',
-                        'Lecture 8': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec8.pdf',
-                        'Lecture 9': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec9.pdf',
-                        'Lecture 10': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec10.pdf',
-                        'Lecture 11': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec11.pdf',
+                        'Lecture 1 Baath crimes': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec1.pdf',
+                        'Lecture 2 Baath crimes': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec2.pdf',
+                        'Lecture 3 Baath crimes': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec3.pdf',
+                        'Lecture 4 Baath crimes': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec4.pdf',
+                        'Lecture 5 Baath crimes': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec5.pdf',
+                        'Lecture 6 Baath crimes': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec6.pdf',
+                        'Lecture 7 Baath crimes': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec7.pdf',
+                        'Lecture 8 Baath crimes': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec8.pdf',
+                        'Lecture 9 Baath crimes': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec9.pdf',
+                        'Lecture 10 Baath crimes': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec10.pdf',
+                        'Lecture 11 Baath crimes': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Baath%20crimes/lec11.pdf',
                     },
                     'WEB programing class': {
-                        'Lecture 1': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%201.pdf',
-                        'Lecture 2': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%202.pdf',
-                        'Lecture 3': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%203.pdf',
-                        'Lecture 4': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%204.pdf',
-                        'Lecture 5': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%205.pdf',
-                        'Lecture 6': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%206.pdf',
-                        'Lecture 7': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%207.pdf',
-                        'Lecture 8': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%208.pdf',
-                        'Lecture 9': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%209.pdf',
-                        'Lecture 10': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%2010.pdf',
-                        'Lecture 11': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%2011.pdf',
+                        'Lecture 1 WEB programing class': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%201.pdf',
+                        'Lecture 2 WEB programing class': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%202.pdf',
+                        'Lecture 3 WEB programing class': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%203.pdf',
+                        'Lecture 4 WEB programing class': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%204.pdf',
+                        'Lecture 5 WEB programing class': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%205.pdf',
+                        'Lecture 6 WEB programing class': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%206.pdf',
+                        'Lecture 7 WEB programing class': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%207.pdf',
+                        'Lecture 8 WEB programing class': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%208.pdf',
+                        'Lecture 9 WEB programing class': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%209.pdf',
+                        'Lecture 10 WEB programing class': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%2010.pdf',
+                        'Lecture 11 WEB programing class': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/WEB%20prgraming/lecture%2011.pdf',
                     },
                     'Data structure': {
-                        'Lecture 1': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Data%20structure/Full%20Data%20Structure.pdf',
+                        'Lecture 1 Data structure': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Data%20structure/Full%20Data%20Structure.pdf',
                     },
                     'OOP': {
-                        'Lecture 1': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/OOP/oop%20python%20lec1.pdf',
-                        'Lecture 2': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/OOP/oop%20python%20lec2.pdf',
-                        'Lecture 3': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/OOP/oop%20python%20lec3.pdf',
-                        'Lecture 4': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/OOP/oop%20python%20lec4.pdf',
-                        'Lecture 5': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/OOP/oop%20python%20lec5.pdf',
-                        'Lecture 6': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/OOP/oop%20python%20lec6.pdf',
-                        'Lecture 7': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/OOP/oop%20python%20lec7.pdf',
-                        'Lecture 8': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/OOP/oop%20python%20lec8.pdf',
-                        'Lecture 9': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/OOP/oop%20python%20lec9.pdf',
-                        'Lecture 10': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/OOP/oop%20python%20lec10.pdf',
-                        'super method': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/OOP/method%20super().pdf',
+                        'Lecture 1 OOP': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/OOP/oop%20python%20lec1.pdf',
+                        'Lecture 2 OOP': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/OOP/oop%20python%20lec2.pdf',
+                        'Lecture 3 OOP': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/OOP/oop%20python%20lec3.pdf',
+                        'Lecture 4 OOP': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/OOP/oop%20python%20lec4.pdf',
+                        'Lecture 5 OOP': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/OOP/oop%20python%20lec5.pdf',
+                        'Lecture 6 OOP': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/OOP/oop%20python%20lec6.pdf',
+                        'Lecture 7 OOP': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/OOP/oop%20python%20lec7.pdf',
+                        'Lecture 8 OOP': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/OOP/oop%20python%20lec8.pdf',
+                        'Lecture 9 OOP': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/OOP/oop%20python%20lec9.pdf',
+                        'Lecture 10 OOP': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/OOP/oop%20python%20lec10.pdf',
+                        'super method OOP': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/OOP/method%20super().pdf',
                     },
                     'Marketing': {
-                        'Lecture 1': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Marketing/lecture%201.pdf',
-                        'Lecture 2': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Marketing/lecture%202.pdf',
-                        'Lecture 3': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Marketing/lecture%203.pdf',
-                        'Lecture 3-3': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Marketing/lecture%203%20-3.pdf',
-                        'Lecture 4': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Marketing/lecture%204.pdf',
-                        'Lecture 4 draw': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Marketing/lec%204%20draw.JPG',
-                        'Lecture 5': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Marketing/lecture%205.pdf',
-                        'Lecture 6': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Marketing/lecture%206.pdf',
-                        'Lecture 7': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Marketing/lecture%207.pdf',
-                        'Lecture 8': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Marketing/lecture%208.pdf',
+                        'Lecture 1 Marketing': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Marketing/lecture%201.pdf',
+                        'Lecture 2 Marketing': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Marketing/lecture%202.pdf',
+                        'Lecture 3 Marketing': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Marketing/lecture%203.pdf',
+                        'Lecture 3-3 Marketing': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Marketing/lecture%203%20-3.pdf',
+                        'Lecture 4 Marketing': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Marketing/lecture%204.pdf',
+                        'Lecture 4 draw Marketing': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Marketing/lec%204%20draw.JPG',
+                        'Lecture 5 Marketing': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Marketing/lecture%205.pdf',
+                        'Lecture 6 Marketing': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Marketing/lecture%206.pdf',
+                        'Lecture 7 Marketing': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Marketing/lecture%207.pdf',
+                        'Lecture 8 Marketing': 'https://raw.githubusercontent.com/MR7ORANGE/uni/main/Marketing/lecture%208.pdf',
                     },
                     
                 }
@@ -452,81 +482,125 @@
             }
         };
 
+        let currentProgram = '';
+        let currentCourse = '';
+        let currentClass = '';
+
         function showContent(program) {
+            currentProgram = program;
             document.querySelector('.content-area').style.display = 'block';
             document.querySelector('.content-area').style.animation = 'slideIn 0.5s ease';
             document.querySelector('.options').style.display = 'none';
             
-            const fileSystem = document.getElementById('fileSystem');
-            fileSystem.innerHTML = '';
-            
-            const backBtn = document.createElement('button');
-            backBtn.className = 'option-btn';
-            backBtn.innerHTML = '👍 Back to forward ';
-            backBtn.onclick = () => {
-                document.querySelector('.content-area').style.display = 'none';
-                document.querySelector('.options').style.display = 'flex';
-            };
-            fileSystem.appendChild(backBtn);
-            
-            Object.entries(fileStructure[program]).forEach(([course, classes]) => {
-                const courseBtn = document.createElement('button');
-                courseBtn.className = 'course-btn';
-                courseBtn.innerHTML = course;
-                courseBtn.onclick = () => showClasses(classes, course, program);
-                fileSystem.appendChild(courseBtn);
-            });
+            displayCurrentContent();
         }
 
         function showClasses(classes, courseName, program) {
-            const fileSystem = document.getElementById('fileSystem');
-            fileSystem.innerHTML = '';
-            fileSystem.style.animation = 'slideIn 0.5s ease';
-            
-            const backBtn = document.createElement('button');
-            backBtn.className = 'option-btn';
-            backBtn.innerHTML = 'Back to Courses';
-            backBtn.onclick = () => showContent(program);
-            fileSystem.appendChild(backBtn);
-            
-            Object.entries(classes).forEach(([className, files]) => {
-                const classBtn = document.createElement('button');
-                classBtn.className = 'class-btn';
-                classBtn.innerHTML = className;
-                classBtn.onclick = () => showFiles(files, className, classes, courseName, program);
-                fileSystem.appendChild(classBtn);
-            });
+            currentCourse = courseName;
+            currentClass = '';
+            displayCurrentContent();
         }
 
         function showFiles(files, className, classes, courseName, program) {
+            currentClass = className;
+            displayCurrentContent();
+        }
+
+        function searchFiles(searchTerm) {
+            if (searchTerm === '') {
+                displayCurrentContent();
+                return;
+            }
+
             const fileSystem = document.getElementById('fileSystem');
             fileSystem.innerHTML = '';
-            fileSystem.style.animation = 'slideIn 0.5s ease';
+
+            const backBtn = document.createElement('button');
+            backBtn.className = 'option-btn';
+            backBtn.innerHTML = 'Back';
+            backBtn.onclick = () => {
+                if (currentClass) showClasses(fileStructure[currentProgram][currentCourse], currentCourse, currentProgram);
+                else if (currentCourse) showContent(currentProgram);
+                else document.querySelector('.content-area').style.display = 'none';
+                document.querySelector('.options').style.display = 'flex';
+            };
+            fileSystem.appendChild(backBtn);
+
+            searchTerm = searchTerm.toLowerCase();
+            
+            // Search through all files
+            Object.entries(fileStructure[currentProgram]).forEach(([courseName, classes]) => {
+                Object.entries(classes).forEach(([className, files]) => {
+                    Object.entries(files).forEach(([filename, link]) => {
+                        if (filename.toLowerCase().includes(searchTerm)) {
+                            const fileDiv = createFileElement(filename, link);
+                            fileSystem.appendChild(fileDiv);
+                        }
+                    });
+                });
+            });
+        }
+
+        function createFileElement(filename, link) {
+            const fileDiv = document.createElement('div');
+            fileDiv.className = 'file-container';
+            fileDiv.onclick = () => {
+                fileDiv.classList.add('clicked');
+                setTimeout(() => fileDiv.classList.remove('clicked'), 300);
+                window.open(link, '_blank');
+            };
+             
+            const fileExtension = link.split('.').pop().toLowerCase();
+            const iconSrc = fileExtension === 'pdf' ? 'pdf.png' : 'pptx.png';
+            
+            fileDiv.innerHTML = `
+                <img class="file-icon" src="${iconSrc}" alt="${fileExtension} file">
+                <span>${filename}</span>
+            `;
+            return fileDiv;
+        }
+
+        function displayCurrentContent() {
+            const fileSystem = document.getElementById('fileSystem');
+            fileSystem.innerHTML = '';
             
             const backBtn = document.createElement('button');
             backBtn.className = 'option-btn';
-            backBtn.innerHTML = 'Back to Classes';
-            backBtn.onclick = () => showClasses(classes, courseName, program);
+            backBtn.innerHTML = 'Back';
+            backBtn.onclick = () => {
+                if (currentClass) showClasses(fileStructure[currentProgram][currentCourse], currentCourse, currentProgram);
+                else if (currentCourse) showContent(currentProgram);
+                else {
+                    document.querySelector('.content-area').style.display = 'none';
+                    document.querySelector('.options').style.display = 'flex';
+                }
+            };
             fileSystem.appendChild(backBtn);
-            
-            Object.entries(files).forEach(([filename, link]) => {
-                const fileDiv = document.createElement('div');
-                fileDiv.className = 'file-container';
-                fileDiv.onclick = () => {
-                    fileDiv.classList.add('clicked');
-                    setTimeout(() => fileDiv.classList.remove('clicked'), 300);
-                    window.open(link, '_blank');
-                };
-                 
-                const fileExtension = link.split('.').pop().toLowerCase();
-                const iconSrc = fileExtension === 'pdf' ? 'pdf.png' : 'pptx.png';
-                
-                fileDiv.innerHTML = `
-                    <img class="file-icon" src="${iconSrc}" alt="${fileExtension} file">
-                    <span>${filename}</span>
-                `;
-                fileSystem.appendChild(fileDiv);
-            });
+
+            if (currentClass) {
+                const files = fileStructure[currentProgram][currentCourse][currentClass];
+                Object.entries(files).forEach(([filename, link]) => {
+                    const fileDiv = createFileElement(filename, link);
+                    fileSystem.appendChild(fileDiv);
+                });
+            } else if (currentCourse) {
+                const classes = fileStructure[currentProgram][currentCourse];
+                Object.entries(classes).forEach(([className, files]) => {
+                    const classBtn = document.createElement('button');
+                    classBtn.className = 'class-btn';
+                    classBtn.innerHTML = className;
+                    classBtn.onclick = () => showFiles(files, className, classes, currentCourse, currentProgram);
+                    fileSystem.appendChild(classBtn);
+                });
+            } else {
+                Object.entries(fileStructure[currentProgram]).forEach(([course, classes]) => {
+                    const courseBtn = document.createElement('button');
+                    courseBtn.className = 'course-btn';
+                    courseBtn.innerHTML = course;
+                    courseBtn.onclick = () => showClasses(classes, course, currentProgram);
+                    fileSystem.appendChild(courseBtn);
+                });
+            }
         }
     </script>
 </body>
